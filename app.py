@@ -4,7 +4,18 @@ sg.theme('DarkBlack')
 
 # Windows that displays the data for each colour combo in colour_combo_layout when button clicked (DES Two)
 def Azorius():
-    layout = [[sg.Text("Azorius Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Azorius Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Azorius Window", layout, modal=True)
     choice = None
     while True:
@@ -15,7 +26,18 @@ def Azorius():
     window.close()
 
 def Boros():
-    layout = [[sg.Text("Boros Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Boros Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Boros Top 10", layout, modal=True)
     choice = None
     while True:
@@ -26,7 +48,18 @@ def Boros():
     window.close()
 
 def Dimir():
-    layout = [[sg.Text("Dimir Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Dimir Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Dimir Top 10", layout, modal=True)
     choice = None
     while True:
@@ -37,7 +70,18 @@ def Dimir():
     window.close()
 
 def Golgari():
-    layout = [[sg.Text("Golgari Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Golgari Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Golgari Top 10", layout, modal=True)
     choice = None
     while True:
@@ -48,7 +92,18 @@ def Golgari():
     window.close()
 
 def Gruul():
-    layout = [[sg.Text("Gruul Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Gruul Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Gruul Top 10", layout, modal=True)
     choice = None
     while True:
@@ -59,7 +114,18 @@ def Gruul():
     window.close()
 
 def Izzet():
-    layout = [[sg.Text("Izzet Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Izzet Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Izzet Top 10", layout, modal=True)
     choice = None
     while True:
@@ -70,7 +136,18 @@ def Izzet():
     window.close()
 
 def Orzhov():
-    layout = [[sg.Text("Orzhov Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Orzhov Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Orzhov Top 10", layout, modal=True)
     choice = None
     while True:
@@ -81,7 +158,18 @@ def Orzhov():
     window.close()
 
 def Rakdos():
-    layout = [[sg.Text("Rakdos Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Rakdos Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Rakdos", layout, modal=True)
     choice = None
     while True:
@@ -92,7 +180,18 @@ def Rakdos():
     window.close()
 
 def Selesnya():
-    layout = [[sg.Text("Selesnya Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Selesnya Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Selesnya Top 10", layout, modal=True)
     choice = None
     while True:
@@ -103,7 +202,18 @@ def Selesnya():
     window.close()
 
 def Simic():
-    layout = [[sg.Text("Simic Top 10")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Simic Top 10", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Simic Top 10", layout, modal=True)
     choice = None
     while True:
@@ -115,7 +225,18 @@ def Simic():
 
 # Windows that displays the data for each colour in colour_layout when button clicked (DES Three)
 def Multicolour():
-    layout = [[sg.Text("Top 10 Multicolour Commanders")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Top 10 Multicolour Commanders", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Top 10 Multicolour Commanders", layout, modal=True)
     choice = None
     while True:
@@ -126,7 +247,18 @@ def Multicolour():
     window.close()
 
 def White():
-    layout = [[sg.Text("Top 10 White Commanders")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Top 10 White Commanders", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Top 10 White Commanders", layout, modal=True)
     choice = None
     while True:
@@ -137,7 +269,18 @@ def White():
     window.close()
 
 def Red():
-    layout = [[sg.Text("Top 10 Red Commanders")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Top 10 Red Commanders", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Top 10 Red Commanders", layout, modal=True)
     choice = None
     while True:
@@ -148,7 +291,18 @@ def Red():
     window.close()
 
 def Blue():
-    layout = [[sg.Text("Top 10 Blue Commanders")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Top 10 Blue Commanders", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Top 10 Blue Commanders", layout, modal=True)
     choice = None
     while True:
@@ -159,7 +313,18 @@ def Blue():
     window.close()
 
 def Green():
-    layout = [[sg.Text("Top 10 Green Commanders")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Top 10 Green Commanders", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Top 10 Green Commanders", layout, modal=True)
     choice = None
     while True:
@@ -170,7 +335,18 @@ def Green():
     window.close()
 
 def Black():
-    layout = [[sg.Text("Top 10 Black Commanders")], [sg.Button('Exit')]]
+    layout = [[sg.Text("Top 10 Black Commanders", justification='center', size=(130,1))],
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")], 
+                [sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png")],
+                [sg.Button('Exit')]]
     window = sg.Window("Top 10 Black Commanders", layout, modal=True)
     choice = None
     while True:
@@ -185,7 +361,7 @@ def main():
     # introduction / Home page
     home_layout = [  
                     [sg.Text("Introduction", justification='center', size=(85,1))],
-                    [sg.Button('Exit')]  ]
+                    [sg.Button('Exit')]]
 
     # The first DES displays the top 50 cards in a grid (DES One)
     top_50_layout = [  
@@ -269,8 +445,9 @@ def main():
                         [[
                             sg.Tab("Home", home_layout),
                             sg.Tab("Top 50", top_50_layout),
-                            sg.Tab("Colours Top 10", colour_layout),
-                            sg.Tab("Colour Cobos Top 10", colour_combo_layout)]]
+                            sg.Tab("Colour Cobos Top 10", colour_combo_layout),
+                            sg.Tab("Top 10 Commanders", colour_layout)
+                        ]]
                     )]
                 ]
 
