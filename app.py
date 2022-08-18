@@ -5,6 +5,7 @@ sg.theme('DarkBlack')
 # Windows that displays the data for each colour combo in colour_combo_layout when button clicked (DES Two)
 def Azorius():
     layout = [[sg.Text("Azorius Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -33,6 +34,7 @@ def Azorius():
 
 def Boros():
     layout = [[sg.Text("Boros Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -61,6 +63,7 @@ def Boros():
 
 def Dimir():
     layout = [[sg.Text("Dimir Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -89,6 +92,7 @@ def Dimir():
 
 def Golgari():
     layout = [[sg.Text("Golgari Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -117,6 +121,7 @@ def Golgari():
 
 def Gruul():
     layout = [[sg.Text("Gruul Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -145,6 +150,7 @@ def Gruul():
 
 def Izzet():
     layout = [[sg.Text("Izzet Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -173,6 +179,7 @@ def Izzet():
 
 def Orzhov():
     layout = [[sg.Text("Orzhov Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -201,6 +208,7 @@ def Orzhov():
 
 def Rakdos():
     layout = [[sg.Text("Rakdos Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -229,6 +237,7 @@ def Rakdos():
 
 def Selesnya():
     layout = [[sg.Text("Selesnya Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -257,6 +266,7 @@ def Selesnya():
 
 def Simic():
     layout = [[sg.Text("Simic Top 10", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -286,6 +296,7 @@ def Simic():
 # Windows that displays the data for each colour in colour_layout when button clicked (DES Three)
 def Multicolour():
     layout = [[sg.Text("Top 10 Multicolour Commanders", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -314,6 +325,7 @@ def Multicolour():
 
 def White():
     layout = [[sg.Text("Top 10 White Commanders", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -342,6 +354,7 @@ def White():
 
 def Red():
     layout = [[sg.Text("Top 10 Red Commanders", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -370,6 +383,7 @@ def Red():
 
 def Blue():
     layout = [[sg.Text("Top 10 Blue Commanders", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -398,6 +412,7 @@ def Blue():
 
 def Green():
     layout = [[sg.Text("Top 10 Green Commanders", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -426,6 +441,7 @@ def Green():
 
 def Black():
     layout = [[sg.Text("Top 10 Black Commanders", justification='center', size=(130,1))],
+                # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -460,65 +476,65 @@ def main():
                     [sg.Button('Exit')]]
 
     # The first DES displays the top 50 cards in a grid (DES One)
-    top_50_layout = [  
-                        [sg.Text("Top 50 Cards", justification='center', size=(85,1))],
-                        [sg.Image(filename="./images/Magic_card_back_small.png"), # Placeholder images
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png")],
-                        [sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png")],
-                        [sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png")],
-                        [sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png")],
-                        [sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png"), 
-                        sg.Image(filename="./images/Magic_card_back_small.png")],
-                        #Chat
-                        [sg.Text('Output', size=(40, 1))],
-                        [sg.Output(size=(75, 5), font=('Helvetica 10'))],
-                        [sg.Text('Input', size=(40, 1))],
-                        [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                        sg.Button('SEND', bind_return_key=True),
-                        sg.Button('EXIT')]]
+    top_50_layout = [[sg.Text("Top 50 Cards", justification='center', size=(85,1))],
+                    # Data placeholder
+                    [sg.Image(filename="./images/Magic_card_back_small.png"), # Placeholder images
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png")],
+                    [sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png")],
+                    [sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png")],
+                    [sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png")],
+                    [sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png"), 
+                    sg.Image(filename="./images/Magic_card_back_small.png")],
+                    #Chat
+                    [sg.Text('Output', size=(40, 1))],
+                    [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                    [sg.Text('Input', size=(40, 1))],
+                    [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                    sg.Button('SEND', bind_return_key=True),
+                    sg.Button('EXIT')]]
 
     # The second DES 
     colour_combo_layout = [
@@ -534,22 +550,19 @@ def main():
                     sg.Button("Simic", key="open_Simic")]]
 
     # The Third DES 
-    colour_layout = [
-                            [sg.Button("Multicolour", key="open_Multi"),
-                            sg.Button("White", key="open_White"),
-                            sg.Button("Red", key="open_Red")],
-                            [sg.Button("Blue", key="open_Blue"),
-                            sg.Button("Green", key="open_Green"),
-                            sg.Button("Black", key="open_Black")]]
+    colour_layout = [[sg.Button("Multicolour", key="open_Multi"),
+                    sg.Button("White", key="open_White"),
+                    sg.Button("Red", key="open_Red")],
+                    [sg.Button("Blue", key="open_Blue"),
+                    sg.Button("Green", key="open_Green"),
+                    sg.Button("Black", key="open_Black")]]
 
     # Putting the Home page and three DES pages into tabs. Calling tab_group in sg.Window() to display the tabs
-    tab_group = [ 
-                    [sg.TabGroup(
-                        [[sg.Tab("Home", home_layout),
-                        sg.Tab("Top 50", top_50_layout),
-                        sg.Tab("Colour Cobos Top 10", colour_combo_layout),
-                        sg.Tab("Top 10 Commanders", colour_layout)]]
-                    )]
+    tab_group = [[sg.TabGroup(
+                    [[sg.Tab("Home", home_layout),
+                    sg.Tab("Top 50", top_50_layout),
+                    sg.Tab("Colour Cobos Top 10", colour_combo_layout),
+                    sg.Tab("Top 10 Commanders", colour_layout)]])]
                 ]
 
     # Create the Window
