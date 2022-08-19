@@ -1,6 +1,5 @@
 """
-Issues(*)/ToDo(-):
-    * Chat not working in the 'main' function. (closes when send button clicked. Something to do with the event in the while loop?)
+Issues(*) / ToDo(-):
     - Home page needs to be populated.
     - DES one and two needs images for buttons and needs repositioning.
 """
@@ -632,10 +631,6 @@ def main():
         """
         if event in (sg.WIN_CLOSED, 'EXIT'):            # closes window
             break
-        if event == 'SEND':
-            query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
-            break
         if event == "open_Azorius": # closes colour_combo_layout windows
             Azorius()
         elif event == "open_Boros":
@@ -668,6 +663,10 @@ def main():
             Green()
         elif event == "open_Black":
             Black()
+            break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
 
     window.close()
 
