@@ -1,6 +1,6 @@
 """
 Issues(*)/ToDo(-):
-    * Chat not working (closes when send button is clicked).
+    * Chat not working in the 'main' function. (closes when send button clicked. Something to do with the event in the while loop?)
     - Home page needs to be populated.
     - DES one and two needs images for buttons and needs repositioning.
 """
@@ -24,9 +24,9 @@ def Azorius():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Azorius Window", layout, modal=True)
@@ -35,6 +35,9 @@ def Azorius():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -53,9 +56,9 @@ def Boros():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Boros Top 10", layout, modal=True)
@@ -64,6 +67,9 @@ def Boros():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -82,9 +88,9 @@ def Dimir():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Dimir Top 10", layout, modal=True)
@@ -93,6 +99,9 @@ def Dimir():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -111,9 +120,9 @@ def Golgari():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Golgari Top 10", layout, modal=True)
@@ -122,6 +131,9 @@ def Golgari():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -140,9 +152,9 @@ def Gruul():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Gruul Top 10", layout, modal=True)
@@ -151,6 +163,9 @@ def Gruul():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -169,9 +184,9 @@ def Izzet():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Izzet Top 10", layout, modal=True)
@@ -180,6 +195,9 @@ def Izzet():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -198,9 +216,9 @@ def Orzhov():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Orzhov Top 10", layout, modal=True)
@@ -209,6 +227,9 @@ def Orzhov():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -227,9 +248,9 @@ def Rakdos():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Rakdos", layout, modal=True)
@@ -238,6 +259,9 @@ def Rakdos():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -256,9 +280,9 @@ def Selesnya():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Selesnya Top 10", layout, modal=True)
@@ -267,6 +291,9 @@ def Selesnya():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -285,9 +312,9 @@ def Simic():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Simic Top 10", layout, modal=True)
@@ -296,6 +323,9 @@ def Simic():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -315,9 +345,9 @@ def Multicolour():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Top 10 Multicolour Commanders", layout, modal=True)
@@ -326,6 +356,9 @@ def Multicolour():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -344,9 +377,9 @@ def White():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Top 10 White Commanders", layout, modal=True)
@@ -355,6 +388,9 @@ def White():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -373,9 +409,9 @@ def Red():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Top 10 Red Commanders", layout, modal=True)
@@ -384,6 +420,9 @@ def Red():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -402,9 +441,9 @@ def Blue():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Top 10 Blue Commanders", layout, modal=True)
@@ -413,6 +452,9 @@ def Blue():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -431,9 +473,9 @@ def Green():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Top 10 Green Commanders", layout, modal=True)
@@ -442,6 +484,9 @@ def Green():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1: {}'.format(query), flush=True) # print input to output
         
     window.close()
 
@@ -460,9 +505,9 @@ def Black():
                 sg.Image(filename="./images/Magic_card_back.png")],
                 #Chat
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True),
                 sg.Button('EXIT')]]
     window = sg.Window("Top 10 Black Commanders", layout, modal=True)
@@ -473,8 +518,7 @@ def Black():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1 {}'.format(query), flush=True) # EXECUTE THE COMMAND
-            break
+            print('User 1: {}'.format(query), flush=True) # EXECUTE THE COMMAND
         
     window.close()
 
@@ -540,9 +584,9 @@ def main():
                     sg.Image(filename="./images/Magic_card_back_small.png")],
                     #Chat
                     [sg.Text('Output', size=(40, 1))],
-                    [sg.Output(size=(75, 5), font=('Helvetica 10'))],
+                    [sg.Output(size=(75, 3), font=('Helvetica 10'))],
                     [sg.Text('Input', size=(40, 1))],
-                    [sg.Multiline(size=(75, 1), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                    [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                     sg.Button('SEND', bind_return_key=True),
                     sg.Button('EXIT')]]
 
@@ -576,7 +620,7 @@ def main():
                 ]]
 
     # Create the Window
-    window = sg.Window("Application", tab_group, use_default_focus=False)
+    window = sg.Window("Application", tab_group, use_default_focus=False, finalize=True)
 
     # Event Loop to process "events" and get the "values" of the inputs
     while True:
@@ -590,7 +634,7 @@ def main():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1 {}'.format(query), flush=True) # EXECUTE THE COMMAND
+            print('User 1: {}'.format(query), flush=True) # print input to output
             break
         if event == "open_Azorius": # closes colour_combo_layout windows
             Azorius()
