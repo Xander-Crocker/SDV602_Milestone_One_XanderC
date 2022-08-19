@@ -1,3 +1,9 @@
+"""
+Issues(*)/ToDo(-):
+    * Chat not working (closes when send button is clicked).
+    - Home page needs to be populated.
+    - DES one and two needs images for buttons and needs repositioning.
+"""
 import PySimpleGUI as sg
 
 sg.theme('DarkBlack')
@@ -465,6 +471,10 @@ def Black():
         event, values = window.read()
         if event == "Exit" or event == sg.WIN_CLOSED:
             break
+        if event == 'SEND':
+            query = values['-QUERY-'].rstrip()
+            print('User 1 {}'.format(query), flush=True) # EXECUTE THE COMMAND
+            break
         
     window.close()
 
@@ -473,7 +483,7 @@ def main():
     # introduction / Home page
     home_layout = [  
                     [sg.Text("Introduction", justification='center', size=(85,1))],
-                    [sg.Button('Exit')]]
+                    [sg.Button('EXIT')]]
 
     # The first DES displays the top 50 cards in a grid (DES One)
     top_50_layout = [[sg.Text("Top 50 Cards", justification='center', size=(85,1))],
@@ -562,8 +572,8 @@ def main():
                     [[sg.Tab("Home", home_layout),
                     sg.Tab("Top 50", top_50_layout),
                     sg.Tab("Colour Cobos Top 10", colour_combo_layout),
-                    sg.Tab("Top 10 Commanders", colour_layout)]])]
-                ]
+                    sg.Tab("Top 10 Commanders", colour_layout)]])
+                ]]
 
     # Create the Window
     window = sg.Window("Application", tab_group, use_default_focus=False)
@@ -571,7 +581,12 @@ def main():
     # Event Loop to process "events" and get the "values" of the inputs
     while True:
         event, values = window.read()
+        """
+        Old close window event handler
         if event == 'Exit' or event == sg.WIN_CLOSED: # closes window
+            break
+        """
+        if event in (sg.WIN_CLOSED, 'EXIT'):            # closes window
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
