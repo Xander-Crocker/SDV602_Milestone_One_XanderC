@@ -13,7 +13,7 @@ def Azorius():
     layout = [[sg.Text("Azorius Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -49,7 +49,7 @@ def Boros():
     layout = [[sg.Text("Boros Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -85,7 +85,7 @@ def Dimir():
     layout = [[sg.Text("Dimir Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -121,7 +121,7 @@ def Golgari():
     layout = [[sg.Text("Golgari Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -157,7 +157,7 @@ def Gruul():
     layout = [[sg.Text("Gruul Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -193,7 +193,7 @@ def Izzet():
     layout = [[sg.Text("Izzet Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -229,7 +229,7 @@ def Orzhov():
     layout = [[sg.Text("Orzhov Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -265,7 +265,7 @@ def Rakdos():
     layout = [[sg.Text("Rakdos Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -301,7 +301,7 @@ def Selesnya():
     layout = [[sg.Text("Selesnya Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -337,7 +337,7 @@ def Simic():
     layout = [[sg.Text("Simic Top 10", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -374,7 +374,7 @@ def Multicolour():
     layout = [[sg.Text("Top 10 Multicolour Commanders", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -410,7 +410,7 @@ def White():
     layout = [[sg.Text("Top 10 White Commanders", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -446,7 +446,7 @@ def Red():
     layout = [[sg.Text("Top 10 Red Commanders", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -482,7 +482,7 @@ def Blue():
     layout = [[sg.Text("Top 10 Blue Commanders", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -518,7 +518,7 @@ def Green():
     layout = [[sg.Text("Top 10 Green Commanders", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -554,7 +554,7 @@ def Black():
     layout = [[sg.Text("Top 10 Black Commanders", justification='center', size=(100,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
@@ -597,7 +597,7 @@ def main():
     top_50_layout = [[sg.Text("Top 50 Cards", justification='center', size=(85,1))],
                     # Summery Information Placeholder
                     [sg.Text("Summery Information:")],
-                    [sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
+                    [sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                     # Data placeholder
                     [sg.Image(filename="./images/Magic_card_back_small.png"), # Placeholder images
                     sg.Image(filename="./images/Magic_card_back_small.png"), 
