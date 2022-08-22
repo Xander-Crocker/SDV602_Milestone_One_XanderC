@@ -591,7 +591,8 @@ def main():
     # introduction / Home page
     home_layout = [  
                     [sg.Text("Introduction", justification='center', size=(85,1))],
-                    [sg.Button('EXIT')]]
+                    [sg.Text("Information about the application will be placed here, this is a placeholder.", size=(85,1))],
+                    [sg.Button('EXIT', size=(8, 1)), sg.Button('Sign Out', size=(8, 1))]]
 
     # The first DES displays the top 50 cards in a grid (DES One)
     top_50_layout = [[sg.Text("Top 50 Cards", justification='center', size=(85,1))],
