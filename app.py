@@ -1,7 +1,8 @@
 """
 Issues(*) / ToDo(-):
     - Home page needs to be populated.
-    - DES one and two needs images for buttons and needs repositioning.
+    - DES two and three needs images for buttons and needs repositioning.
+    - Use """""" comments
 """
 import PySimpleGUI as sg
 
@@ -9,25 +10,29 @@ sg.theme('DarkBlack')
 
 # Windows that displays the data for each colour combo in colour_combo_layout when button clicked (DES Two)
 def Azorius():
-    layout = [[sg.Text("Azorius Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Azorius Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"),  
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"),  
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Azorius Window", layout, modal=True)
     choice = None
     while True:
@@ -41,25 +46,29 @@ def Azorius():
     window.close()
 
 def Boros():
-    layout = [[sg.Text("Boros Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Boros Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Boros Top 10", layout, modal=True)
     choice = None
     while True:
@@ -73,25 +82,29 @@ def Boros():
     window.close()
 
 def Dimir():
-    layout = [[sg.Text("Dimir Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Dimir Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Dimir Top 10", layout, modal=True)
     choice = None
     while True:
@@ -105,25 +118,29 @@ def Dimir():
     window.close()
 
 def Golgari():
-    layout = [[sg.Text("Golgari Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Golgari Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Golgari Top 10", layout, modal=True)
     choice = None
     while True:
@@ -137,25 +154,29 @@ def Golgari():
     window.close()
 
 def Gruul():
-    layout = [[sg.Text("Gruul Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Gruul Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Gruul Top 10", layout, modal=True)
     choice = None
     while True:
@@ -169,25 +190,29 @@ def Gruul():
     window.close()
 
 def Izzet():
-    layout = [[sg.Text("Izzet Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Izzet Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Izzet Top 10", layout, modal=True)
     choice = None
     while True:
@@ -201,25 +226,29 @@ def Izzet():
     window.close()
 
 def Orzhov():
-    layout = [[sg.Text("Orzhov Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Orzhov Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Orzhov Top 10", layout, modal=True)
     choice = None
     while True:
@@ -233,25 +262,29 @@ def Orzhov():
     window.close()
 
 def Rakdos():
-    layout = [[sg.Text("Rakdos Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Rakdos Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Rakdos", layout, modal=True)
     choice = None
     while True:
@@ -265,25 +298,29 @@ def Rakdos():
     window.close()
 
 def Selesnya():
-    layout = [[sg.Text("Selesnya Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Selesnya Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Selesnya Top 10", layout, modal=True)
     choice = None
     while True:
@@ -297,25 +334,29 @@ def Selesnya():
     window.close()
 
 def Simic():
-    layout = [[sg.Text("Simic Top 10", justification='center', size=(130,1))],
+    layout = [[sg.Text("Simic Top 10", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Simic Top 10", layout, modal=True)
     choice = None
     while True:
@@ -330,25 +371,29 @@ def Simic():
 
 # Windows that displays the data for each colour in colour_layout when button clicked (DES Three)
 def Multicolour():
-    layout = [[sg.Text("Top 10 Multicolour Commanders", justification='center', size=(130,1))],
+    layout = [[sg.Text("Top 10 Multicolour Commanders", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Top 10 Multicolour Commanders", layout, modal=True)
     choice = None
     while True:
@@ -362,25 +407,29 @@ def Multicolour():
     window.close()
 
 def White():
-    layout = [[sg.Text("Top 10 White Commanders", justification='center', size=(130,1))],
+    layout = [[sg.Text("Top 10 White Commanders", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Top 10 White Commanders", layout, modal=True)
     choice = None
     while True:
@@ -394,25 +443,29 @@ def White():
     window.close()
 
 def Red():
-    layout = [[sg.Text("Top 10 Red Commanders", justification='center', size=(130,1))],
+    layout = [[sg.Text("Top 10 Red Commanders", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Top 10 Red Commanders", layout, modal=True)
     choice = None
     while True:
@@ -426,25 +479,29 @@ def Red():
     window.close()
 
 def Blue():
-    layout = [[sg.Text("Top 10 Blue Commanders", justification='center', size=(130,1))],
+    layout = [[sg.Text("Top 10 Blue Commanders", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Top 10 Blue Commanders", layout, modal=True)
     choice = None
     while True:
@@ -458,25 +515,29 @@ def Blue():
     window.close()
 
 def Green():
-    layout = [[sg.Text("Top 10 Green Commanders", justification='center', size=(130,1))],
+    layout = [[sg.Text("Top 10 Green Commanders", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
+                sg.Image(filename="./images/Magic_card_back.png"),
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Top 10 Green Commanders", layout, modal=True)
     choice = None
     while True:
@@ -490,25 +551,29 @@ def Green():
     window.close()
 
 def Black():
-    layout = [[sg.Text("Top 10 Black Commanders", justification='center', size=(130,1))],
+    layout = [[sg.Text("Top 10 Black Commanders", justification='center', size=(100,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                 # Data placeholder
                 [sg.Image(filename="./images/Magic_card_back.png"), # Placeholder images
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")], 
                 [sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png"), 
-                sg.Image(filename="./images/Magic_card_back.png"), 
                 sg.Image(filename="./images/Magic_card_back.png")],
-                #Chat
+                #Chat 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                [sg.Output(size=(90, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True),
-                sg.Button('EXIT')]]
+                [sg.Multiline(size=(90, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                #Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     window = sg.Window("Top 10 Black Commanders", layout, modal=True)
     choice = None
     while True:
@@ -530,6 +595,9 @@ def main():
 
     # The first DES displays the top 50 cards in a grid (DES One)
     top_50_layout = [[sg.Text("Top 50 Cards", justification='center', size=(85,1))],
+                    # Summery Information Placeholder
+                    [sg.Text("Summery Information:")],
+                    [sg.Text("Information about the DES will be placed here, this is a placeholder", size=(85,1))],
                     # Data placeholder
                     [sg.Image(filename="./images/Magic_card_back_small.png"), # Placeholder images
                     sg.Image(filename="./images/Magic_card_back_small.png"), 
@@ -581,13 +649,16 @@ def main():
                     sg.Image(filename="./images/Magic_card_back_small.png"), 
                     sg.Image(filename="./images/Magic_card_back_small.png"), 
                     sg.Image(filename="./images/Magic_card_back_small.png")],
-                    #Chat
+                    #Chat 
                     [sg.Text('Output', size=(40, 1))],
-                    [sg.Output(size=(75, 3), font=('Helvetica 10'))],
+                    [sg.Output(size=(70, 3), font=('Helvetica 10')),
+                    # Zoom Buttons
+                    sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                     [sg.Text('Input', size=(40, 1))],
-                    [sg.Multiline(size=(75, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                    sg.Button('SEND', bind_return_key=True),
-                    sg.Button('EXIT')]]
+                    [sg.Multiline(size=(70, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                    sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                    #Settings Button
+                    sg.Button('Settings', size=(8, 1))]]
 
     # The second DES 
     colour_combo_layout = [
@@ -624,14 +695,9 @@ def main():
     # Event Loop to process "events" and get the "values" of the inputs
     while True:
         event, values = window.read()
-        """
-        Old close window event handler
-        if event == 'Exit' or event == sg.WIN_CLOSED: # closes window
+        if event in (sg.WIN_CLOSED, 'EXIT'):    # closes window
             break
-        """
-        if event in (sg.WIN_CLOSED, 'EXIT'):            # closes window
-            break
-        if event == "open_Azorius": # closes colour_combo_layout windows
+        if event == "open_Azorius":     # closes colour_combo_layout windows
             Azorius()
         elif event == "open_Boros":
             Boros()
