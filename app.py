@@ -687,8 +687,8 @@ def main():
                     [[sg.Tab("Home", home_layout),
                     sg.Tab("Top 50", top_50_layout),
                     sg.Tab("Colour Cobos Top 10", colour_combo_layout),
-                    sg.Tab("Top 10 Commanders", colour_layout)]])
-                ]]
+                    sg.Tab("Top 10 Commanders", colour_layout)]]
+                )]]
 
     # Create the Window
     window = sg.Window("Application", tab_group, use_default_focus=False, finalize=True)
