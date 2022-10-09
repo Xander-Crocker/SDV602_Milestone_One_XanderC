@@ -2,11 +2,45 @@
 Issues(*) / ToDo(-):
     - Home page needs to be populated.
     - DES two and three needs images for buttons and needs repositioning.
-    - Use """""" comments
+    - Use """ """ comments
+    
+    - Swap Data Placeholders for excel data.
+    - Present Data as graphs.
+    
+    * 'read_excel' not working properly (not importing data from excel file).
+    * Cant display data within the window when opened.
+    
 """
+
+import graphs as ce 
+
 import PySimpleGUI as sg
+import pandas as pd
+import matplotlib
+import inspect
+matplotlib.use('TkAgg')
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt
 
 sg.theme('DarkBlack')
+
+
+def testing_graphs():
+    
+    
+    figure_w, figure_h = 650, 650
+    
+    layout = [[sg.Text('Matplotlib Plot Test', font=('current 18'))],
+                sg.Canvas(size=(figure_w, figure_h), key='-CANVAS-')]
+    
+    window = sg.Window('Demo', layout, grab_anywhere=False, finalize=True)
+    figure_agg = None
+    
+    while True:
+        event, values = window.read() 
+        if event in (sg.WIN_CLOSED, 'Exit'):  
+            break
+
 
 # Windows that displays the data for each colour combo in colour_combo_layout when button clicked (DES Two)
 def Azorius():
@@ -592,6 +626,7 @@ def main():
     home_layout = [  
                     [sg.Text("Introduction", justification='center', size=(85,1))],
                     [sg.Text("Information about the application will be placed here, this is a placeholder.", size=(85,1))],
+                    [sg.Button('Excel_Graph', key=('open_Excel_Graph')),],
                     [sg.Button('EXIT', size=(8, 1)), sg.Button('Sign Out', size=(8, 1))]]
 
     # The first DES displays the top 50 cards in a grid (DES One)
@@ -730,6 +765,8 @@ def main():
             Green()
         elif event == "open_Black":
             Black()
+        elif event == "open_Excel_Graph":     # Test Data Excel Graph
+            testing_graphs()
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
