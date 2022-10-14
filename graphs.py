@@ -1,11 +1,7 @@
 """
 Issues(*) / ToDo(-):
-    - Use """ """ comments
     
     - Swap Data Placeholders for excel data.
-    - Present Data as graphs.
-    
-    * 'read_excel' not working properly (not importing data from excel file).
     * Cant display data within the window when opened.
     
 """
@@ -20,24 +16,16 @@ import matplotlib.pyplot as plt
 df = pd.read_excel(r'C:\Users\xande\OneDrive\Documents\_Course_2022\_SDV602\SDV602_Project\test_data_set_sdv602_milestone_2.xlsx', sheet_name='Sheet1')
 #print(df)
 
-# plt.plot(df['Card_Name'], df['Percentage_of_Decks'])
-# plt.xlabel('Card_Name')
-# plt.ylabel('Percentage of Decks')
-# plt.title('Test Excel Graph')
-
-#plt.show()
-
 def Excel_Graphs(**kwargs): 
     """
+    plots graph from excel file.
     
     """
 
     plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-
     plt.xlabel("Card Name")
     plt.ylabel("Percentage of Decks")
     plt.title("Bar Chart Example")
-
     plt.plot()
     
     return plt.gcf()
