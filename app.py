@@ -2,7 +2,11 @@
 Issues(*) / ToDo(-):
     - Home page needs to be populated.
     - DES two and three needs images for buttons and buttons need repositioning.
-    - 
+    
+    - Login and Sign up need to be created.
+    - Chat needs to function correctly.
+    
+    * Cant place data for graphs in a seperate file.
 """
 
 import PySimpleGUI as sg
@@ -17,13 +21,7 @@ sg.theme('DarkBlack')
 # Excel file imported as a variable
 df = pd.read_excel('test_data_set_sdv602_milestone_2.xlsx', sheet_name='Sheet1')
 
-# Windows that displays the data for each colour combo in colour_combo_layout when button clicked (DES Two)
-def CCL_Azorius():
-    """
-    Function for Colour Combo Window for Azorius (White/Blue)
-    
-    """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
+def Excel_Graph(Card_Name, Percentage_of_Decks): 
         """
         plots graph from excel file.
         
@@ -36,25 +34,8 @@ def CCL_Azorius():
         plt.plot()
         
         return plt.gcf()
-    
-    layout = [[sg.Text("Azorius Top 10", justification='center', size=(125,1))],
-                # Summery Information Placeholder
-                [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
-                # Canvas for graph
-                [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
-                [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
-                # Zoom Buttons
-                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
-                [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
-                sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
+
+def draw_figure(canvas, figure):
         """
         Function that draws the graph (figure) to the canvas.
         
@@ -63,9 +44,32 @@ def CCL_Azorius():
         figure_canvas_agg.draw()
         figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
         return figure_canvas_agg
+
+# Windows that displays the data for each colour combo in colour_combo_layout when button clicked (DES Two)
+def CCL_Azorius():
+    """
+    Function for Colour Combo Window for Azorius (White/Blue)
+    
+    """
+    layout = [[sg.Text("Azorius Top 10", justification='center', size=(125,1))],
+                # Summery Information Placeholder
+                [sg.Text("Summery Information:"),
+                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
+                # Canvas for graph
+                [sg.Canvas(size=(700, 600), key='-CANVAS-')],
+                # Chat Box
+                [sg.Text('Output', size=(40, 1))],
+                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                # Zoom Buttons
+                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
+                [sg.Text('Input', size=(40, 1))],
+                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+                # Settings Button
+                sg.Button('Settings', size=(8, 1))]]
     
     window = sg.Window("Azorius Window", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -85,49 +89,25 @@ def CCL_Boros():
     Function for Colour Combo Window for Boros (White/Red)
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Boros Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
     window = sg.Window("Boros Top 10", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -147,49 +127,25 @@ def CCL_Dimir():
     Function for Colour Combo Window for Dimir (Blue/Black)
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Dimir Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
     window = sg.Window("Dimir Top 10", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -209,49 +165,25 @@ def CCL_Golgari():
     Function for Colour Combo Window for Golgari (Black/Green)
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Golgari Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
+
     window = sg.Window("Golgari Top 10", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -270,49 +202,25 @@ def CCL_Gruul():
     """
     Function for Colour Combo Window for Grull (Red/Green)
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Gruul Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
+
     window = sg.Window("Gruul Top 10", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -332,49 +240,25 @@ def CCL_Izzet():
     Function for Colour Combo Window for Izzet (Blue/Red)
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Izzet Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
+
     window = sg.Window("Izzet Top 10", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -394,49 +278,25 @@ def CCL_Orzhov():
     Function for Colour Combo Window for Orzhov (White/Black)
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Orzhov Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
     window = sg.Window("Orzhov Top 10", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -456,49 +316,25 @@ def CCL_Rakdos():
     Function for Colour Combo Window for Rakdos (Black/Red)
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Rakdos Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
+
     window = sg.Window("Rakdos", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -518,49 +354,25 @@ def CCL_Selesnya():
     Function for Colour Combo Window for Selesnya (Green/White)
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Selesnya Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
     window = sg.Window("Selesnya Top 10", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -580,49 +392,25 @@ def CCL_Simic():
     Function for Colour Combo Window for Simic (Blue/Green)
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Simic Top 10", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
     window = sg.Window("Simic Top 10", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -642,50 +430,26 @@ def CL_Multicolour():
     """
     Function for Colour Window for Multicolour (all colours)
     
-    """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
+    """    
     layout = [[sg.Text("Top 10 Multicolour Commanders", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
+
     window = sg.Window("Top 10 Multicolour Commanders", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -705,20 +469,6 @@ def CL_White():
     Function for Colour Window for White Cards
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Top 10 White Commanders", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
@@ -726,29 +476,19 @@ def CL_White():
                 # Data placeholder
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
     window = sg.Window("Top 10 White Commanders", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -768,49 +508,25 @@ def CL_Red():
     Function for Colour Window for Red Cards
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Top 10 Red Commanders", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                # Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
     window = sg.Window("Top 10 Red Commanders", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -830,49 +546,25 @@ def CL_Blue():
     Function for Colour Window for Blue Cards
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Top 10 Blue Commanders", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
+
     window = sg.Window("Top 10 Blue Commanders", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -892,49 +584,25 @@ def CL_Green():
     Function for Colour Window for Green Cards
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Top 10 Green Commanders", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
+
     window = sg.Window("Top 10 Green Commanders", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -954,49 +622,25 @@ def CL_Black():
     Function for Colour Window for Black Cards
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
     layout = [[sg.Text("Top 10 Black Commanders", justification='center', size=(125,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                #Chat 
+                # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
                 [sg.Output(size=(115, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                # Chat Box
                 [sg.Text('Input', size=(40, 1))],
                 [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                #Settings Button
+                # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
-    
+
     window = sg.Window("Top 10 Black Commanders", layout, modal=True, finalize=True)
-    choice = None
     
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
@@ -1016,21 +660,7 @@ def main():
     Function that contains the Main page that opens on startup
     
     """
-    def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        plots graph from excel file.
-        
-        """
-        plt.figure(figsize=(10, 5))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
-        plt.plot()
-        
-        return plt.gcf()
-    
-    # introduction / Home page
+    # Introduction / Home page
     home_layout = [  
                     [sg.Text("Introduction", justification='center', size=(125,1))],
                     [sg.Text("Information about the application will be placed here, this is a placeholder.", size=(85,1))],
@@ -1078,24 +708,14 @@ def main():
     # Putting the Home page and three DES pages into tabs. Calling tab_group in sg.Window() to display the tabs
     tab_group = [[sg.TabGroup(
                     [[sg.Tab("Home", home_layout),
-                    sg.Tab("Top 10", top_10_layout),
-                    sg.Tab("Colour Cobos Top 10", colour_combo_layout),
-                    sg.Tab("Top 10 For Each Colour", colour_layout)]]
+                    sg.Tab("Top 10 Cards", top_10_layout),
+                    sg.Tab("Top 10 Cards for Each Colour Combo - ", colour_combo_layout),
+                    sg.Tab("Top 10 Cards for Each Colour", colour_layout)]]
                 )]]
-    
-    def draw_figure(canvas, figure):
-        """
-        Function that draws the graph (figure) to the canvas.
-        
-        """
-        figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
-        figure_canvas_agg.draw()
-        figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
-        return figure_canvas_agg
 
     # Create the Window
     window = sg.Window("Application", tab_group, use_default_focus=False, finalize=True)
-    
+
     # Draws the graph to the canvas
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
 
@@ -1124,7 +744,7 @@ def main():
             CCL_Selesnya()
         elif event == "open_Simic":
             CCL_Simic()
-        elif event == "open_Multi": # closes colour_layout windows
+        elif event == "open_Multi":     # closes colour_layout windows
             CL_Multicolour()
         elif event == "open_White":
             CL_White()
@@ -1138,7 +758,7 @@ def main():
             CL_Black()
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True)   # if send button clicked, print input to output
 
     window.close()
 
