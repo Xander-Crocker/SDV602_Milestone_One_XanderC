@@ -16,28 +16,28 @@ matplotlib.use('TkAgg')
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 
-sg.theme('DarkBlack')
-
 # Excel file imported as a variable
 df = pd.read_excel('test_data_set_sdv602_milestone_2.xlsx', sheet_name='Sheet1')
 
+sg.theme('DarkBlack')
+
 def Excel_Graph(Card_Name, Percentage_of_Decks): 
         """
-        plots graph from excel file.
+        Plots graph from excel file. (Placeholder for Milesotne 3)
         
         """
-        plt.figure(figsize=(10, 5))
+        plt.figure(figsize=(10.5, 6))
         plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name")
-        plt.ylabel("Percentage of Decks")
-        plt.title("Bar Chart Example")
+        plt.xlabel("Card Name", weight='bold')
+        plt.ylabel("Percentage of Decks", weight='bold')
+        plt.title("Excel Graph Bar Chart", weight='bold')
         plt.plot()
         
         return plt.gcf()
 
 def draw_figure(canvas, figure):
         """
-        Function that draws the graph (figure) to the canvas.
+        Function that uses a figgure agg to draw the graph (figure) to the canvas.
         
         """
         figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
@@ -45,13 +45,13 @@ def draw_figure(canvas, figure):
         figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
         return figure_canvas_agg
 
-# Windows that displays the data for each colour combo in colour_combo_layout when button clicked (DES Two)
+# Windows that displays the data for each colour combo in colour_combo_layout when button clicked. (DES Two)
 def CCL_Azorius():
     """
-    Function for Colour Combo Window for Azorius (White/Blue)
+    Function that opens Azorius window (White/Blue) when clicked in Colour Combo tab. 
     
     """
-    layout = [[sg.Text("Azorius Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Azorius Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -59,19 +59,19 @@ def CCL_Azorius():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    window = sg.Window("Azorius Window", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Azorius Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -80,16 +80,16 @@ def CCL_Azorius():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Boros():
     """
-    Function for Colour Combo Window for Boros (White/Red)
+    Function that opens Boros window (White/Red) when clicked in Colour Combo tab. 
     
     """
-    layout = [[sg.Text("Boros Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Boros Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -97,19 +97,19 @@ def CCL_Boros():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    window = sg.Window("Boros Top 10", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Boros Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -118,16 +118,16 @@ def CCL_Boros():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Dimir():
     """
-    Function for Colour Combo Window for Dimir (Blue/Black)
+    Function that opens Dimir window (Blue/Black) when clicked in Colour Combo tab. 
     
     """
-    layout = [[sg.Text("Dimir Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Dimir Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -135,19 +135,19 @@ def CCL_Dimir():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    window = sg.Window("Dimir Top 10", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Dimir Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -156,16 +156,16 @@ def CCL_Dimir():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Golgari():
     """
-    Function for Colour Combo Window for Golgari (Black/Green)
+    Function that opens Golgari window (Black/Green) when clicked in Colour Combo tab.
     
     """
-    layout = [[sg.Text("Golgari Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Golgari Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -173,19 +173,19 @@ def CCL_Golgari():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
 
-    window = sg.Window("Golgari Top 10", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Golgari Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -194,15 +194,15 @@ def CCL_Golgari():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Gruul():
     """
-    Function for Colour Combo Window for Grull (Red/Green)
+    Function that opens Grull window (Red/Green) when clicked in Colour Combo tab. 
     """
-    layout = [[sg.Text("Gruul Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Gruul Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -210,19 +210,19 @@ def CCL_Gruul():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
 
-    window = sg.Window("Gruul Top 10", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Gruul Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -231,16 +231,16 @@ def CCL_Gruul():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Izzet():
     """
-    Function for Colour Combo Window for Izzet (Blue/Red)
+    Function that opens Izzet window (Blue/Red) when clicked in Colour Combo tab.
     
     """
-    layout = [[sg.Text("Izzet Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Izzet Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -248,19 +248,19 @@ def CCL_Izzet():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
 
-    window = sg.Window("Izzet Top 10", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Izzet Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -269,16 +269,16 @@ def CCL_Izzet():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Orzhov():
     """
-    Function for Colour Combo Window for Orzhov (White/Black)
+    Function that opens Orzhov window (White/Black) when clicked in Colour Combo tab.  
     
     """
-    layout = [[sg.Text("Orzhov Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Orzhov Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -286,19 +286,19 @@ def CCL_Orzhov():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    window = sg.Window("Orzhov Top 10", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Orzhov Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -307,16 +307,16 @@ def CCL_Orzhov():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Rakdos():
     """
-    Function for Colour Combo Window for Rakdos (Black/Red)
+    Function that opens Rakdos window (Black/Red) when clicked in Colour Combo tab.  
     
     """
-    layout = [[sg.Text("Rakdos Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Rakdos Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -324,19 +324,19 @@ def CCL_Rakdos():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
 
-    window = sg.Window("Rakdos", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Rakdos Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -345,16 +345,16 @@ def CCL_Rakdos():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Selesnya():
     """
-    Function for Colour Combo Window for Selesnya (Green/White)
+    Function that opens Selesnya window (Green/White) when clicked in Colour Combo tab.  
     
     """
-    layout = [[sg.Text("Selesnya Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Selesnya Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -362,19 +362,19 @@ def CCL_Selesnya():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    window = sg.Window("Selesnya Top 10", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Selesnya Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -383,16 +383,16 @@ def CCL_Selesnya():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CCL_Simic():
     """
-    Function for Colour Combo Window for Simic (Blue/Green)
+    Function that opens Simic window (Blue/Green) when clicked in Colour Combo tab.  
     
     """
-    layout = [[sg.Text("Simic Top 10", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Simic Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -400,19 +400,19 @@ def CCL_Simic():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    window = sg.Window("Simic Top 10", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Simic Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -421,17 +421,17 @@ def CCL_Simic():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
-# Windows that displays the data for each colour in colour_layout when button clicked (DES Three)
+# Windows that displays the data for each colour in colour_layout when button clicked. (DES Three)
 def CL_Multicolour():
     """
-    Function for Colour Window for Multicolour (all colours)
+    Function that opens Multicolour window (any colour combo) when clicked in Colour tab.  
     
     """    
-    layout = [[sg.Text("Top 10 Multicolour Commanders", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Multicolour Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -439,19 +439,19 @@ def CL_Multicolour():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
 
-    window = sg.Window("Top 10 Multicolour Commanders", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Multicolour Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -460,37 +460,36 @@ def CL_Multicolour():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CL_White():
     """
-    Function for Colour Window for White Cards
+    Function that opens White Cards window when clicked in Colour tab. 
     
     """
-    layout = [[sg.Text("Top 10 White Commanders", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 White Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
-                # Data placeholder
                 # Canvas for graph
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    window = sg.Window("Top 10 White Commanders", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 White Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -499,16 +498,16 @@ def CL_White():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CL_Red():
     """
-    Function for Colour Window for Red Cards
+    Function that opens Red Cards window when clicked in Colour tab.  
     
     """
-    layout = [[sg.Text("Top 10 Red Commanders", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Red Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -516,19 +515,19 @@ def CL_Red():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
     
-    window = sg.Window("Top 10 Red Commanders", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Red Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -537,16 +536,16 @@ def CL_Red():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CL_Blue():
     """
-    Function for Colour Window for Blue Cards
+    Function that opens Blue Cards window when clicked in Colour tab.  
     
     """
-    layout = [[sg.Text("Top 10 Blue Commanders", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Blue Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -554,19 +553,19 @@ def CL_Blue():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
 
-    window = sg.Window("Top 10 Blue Commanders", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Blue Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -575,16 +574,16 @@ def CL_Blue():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CL_Green():
     """
-    Function for Colour Window for Green Cards
+    Function that creates Green Cards window when clicked in Colour tab.  
     
     """
-    layout = [[sg.Text("Top 10 Green Commanders", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Green Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -592,19 +591,19 @@ def CL_Green():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
 
-    window = sg.Window("Top 10 Green Commanders", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Green Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -613,16 +612,16 @@ def CL_Green():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # print input to output
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def CL_Black():
     """
-    Function for Colour Window for Black Cards
+    Function that opens Black Cards window when clicked in Colour tab.  
     
     """
-    layout = [[sg.Text("Top 10 Black Commanders", justification='center', size=(125,1))],
+    layout = [[sg.Text("Top 10 Black Cards", justification='center', size=(135,1))],
                 # Summery Information Placeholder
                 [sg.Text("Summery Information:"),
                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
@@ -630,19 +629,19 @@ def CL_Black():
                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
                 # Chat Box 
                 [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                [sg.Output(size=(125, 3), font=('Helvetica 10')),
                 # Zoom Buttons
                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
                 # Chat Box
                 [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
                 # Settings Button
                 sg.Button('Settings', size=(8, 1))]]
 
-    window = sg.Window("Top 10 Black Commanders", layout, modal=True, finalize=True)
+    window = sg.Window("Top 10 Black Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
     
     while True:
@@ -651,40 +650,41 @@ def CL_Black():
             break
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # EXECUTE THE COMMAND
+            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
     window.close()
 
 def main():
     """
-    Function that contains the Main page that opens on startup
+    Function that contains the Home/Main page that opens on startup
     
     """
-    # Introduction / Home page
+    # Introduction / Home page.
     home_layout = [  
-                    [sg.Text("Introduction", justification='center', size=(125,1))],
+                    [sg.Text("Introduction", justification='center', size=(135,1))],
                     [sg.Text("Information about the application will be placed here, this is a placeholder.", size=(85,1))],
                     [sg.Button('EXIT', size=(8, 1)), sg.Button('Sign Out', size=(8, 1))]]
 
-    # The first DES displays the top 10 cards in a grid (DES One)
-    top_10_layout = [[sg.Text("Top 10 Cards", justification='center', size=(125,1))],
+    # The first DES displays the top 10 cards in a grid (DES One).
+    top_10_layout = [[sg.Text("Top 10 Cards", justification='center', size=(135,1))],
                     # Summery Information Placeholder
                     [sg.Text("Summery Information:")],
                     [sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                     # Canvas for graph
                     [sg.Canvas(size=(600, 600), key='-CANVAS-')],
-                    #Chat 
+                    # Chat Box
                     [sg.Text('Output', size=(40, 1))],
-                    [sg.Output(size=(115, 3), font=('Helvetica 10')),
+                    [sg.Output(size=(125, 3), font=('Helvetica 10')),
                     # Zoom Buttons
                     sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+                    # Chat Box
                     [sg.Text('Input', size=(40, 1))],
-                    [sg.Multiline(size=(115, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+                    [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
                     sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                    #Settings Button
+                    # Settings Button
                     sg.Button('Settings', size=(8, 1))]]
 
-    # The second DES 
+    # The second DES. (CCL_)
     colour_combo_layout = [
                     [sg.Button("Azorius", key="open_Azorius"),
                     sg.Button("Boros", key="open_Boros"),
@@ -697,7 +697,7 @@ def main():
                     sg.Button("Selesnya", key="open_Selesnya"),
                     sg.Button("Simic", key="open_Simic")]]
 
-    # The Third DES 
+    # The Third DES. (CL_)
     colour_layout = [[sg.Button("Multicolour", key="open_Multi"),
                     sg.Button("White", key="open_White"),
                     sg.Button("Red", key="open_Red")],
@@ -705,26 +705,26 @@ def main():
                     sg.Button("Green", key="open_Green"),
                     sg.Button("Black", key="open_Black")]]
 
-    # Putting the Home page and three DES pages into tabs. Calling tab_group in sg.Window() to display the tabs
+    # Putting the Home page and three DES pages into tabs. Calling tab_group in sg.Window() to display the tabs.
     tab_group = [[sg.TabGroup(
                     [[sg.Tab("Home", home_layout),
                     sg.Tab("Top 10 Cards", top_10_layout),
-                    sg.Tab("Top 10 Cards for Each Colour Combo - ", colour_combo_layout),
+                    sg.Tab("Top 10 Cards for Each Colour Combo", colour_combo_layout),
                     sg.Tab("Top 10 Cards for Each Colour", colour_layout)]]
                 )]]
 
-    # Create the Window
+    # Creates the Main/Home Window.
     window = sg.Window("Application", tab_group, use_default_focus=False, finalize=True)
 
-    # Draws the graph to the canvas
+    # Draws the graph to the canvas.
     draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
 
-    # Event Loop to process "events" and get the "values" of the inputs
+    # Event Loop to process "events" and get the "values" of the inputs.
     while True:
         event, values = window.read()
-        if event in (sg.WIN_CLOSED, 'EXIT'):    # closes window
+        if event in (sg.WIN_CLOSED, 'EXIT'):    # Closes window.
             break
-        if event == "open_Azorius":     # closes colour_combo_layout windows
+        if event == "open_Azorius":     # Closes colour_combo_layout windows.
             CCL_Azorius()
         elif event == "open_Boros":
             CCL_Boros()
@@ -744,7 +744,7 @@ def main():
             CCL_Selesnya()
         elif event == "open_Simic":
             CCL_Simic()
-        elif event == "open_Multi":     # closes colour_layout windows
+        elif event == "open_Multi":     # Closes colour_layout windows.
             CL_Multicolour()
         elif event == "open_White":
             CL_White()
@@ -758,7 +758,7 @@ def main():
             CL_Black()
         if event == 'SEND':
             query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True)   # if send button clicked, print input to output
+            print('User 1: {}'.format(query), flush=True)   # If send button clicked, print input to output.
 
     window.close()
 
