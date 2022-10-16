@@ -11,7 +11,7 @@ Issues(*) / ToDo(-):
     - Zoom in and zoom out buttons need to function correctly.
     - Chat needs to function correctly.
     
-    * Cant place data for graphs in a seperate file.
+    * Cant place data for graphs in a separate file.
 """
 
 import PySimpleGUI as sg
@@ -28,7 +28,7 @@ sg.theme('DarkBlack')
 
 def Excel_Graph(Card_Name, Percentage_of_Decks): 
         """
-        Plots graph from excel file. (Placeholder for Milesotne 3)
+        Plots graph from excel file. (Placeholder for Milestone 3)
         
         """
         plt.figure(figsize=(10.5, 6))
@@ -42,7 +42,7 @@ def Excel_Graph(Card_Name, Percentage_of_Decks):
 
 def draw_figure(canvas, figure):
         """
-        Function that uses a figgure agg to draw the graph (figure) to the canvas.
+        Function that uses a figure agg to draw the graph (figure) to the canvas.
         
         """
         figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
