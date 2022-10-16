@@ -1,9 +1,14 @@
 """
 Issues(*) / ToDo(-):
+    - Write ReadMe
     - Home page needs to be populated.
+    - DES windows needs to be populated.
     - DES two and three needs images for buttons and buttons need repositioning.
     
     - Login and Sign up need to be created.
+    - Sign out button on home page. (Take user back to login)
+    - Settings page needs to be created.
+    - Zoom in and zoom out buttons need to function correctly.
     - Chat needs to function correctly.
     
     * Cant place data for graphs in a seperate file.
