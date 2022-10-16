@@ -11,7 +11,7 @@ Issues(*) / ToDo(-):
     - Zoom in and zoom out buttons need to function correctly.
     - Chat needs to function correctly.
     
-    * Cant place data for graphs in a seperate file.
+    * Cant place data for graphs in a separate file.
 """
 
 import PySimpleGUI as sg
@@ -20,29 +20,32 @@ import matplotlib
 matplotlib.use('TkAgg')
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
+from view.figures import Excel_Graph
+from view.des_view import DesView
+from controller.CL_green_button import CL_Green
 
 # Excel file imported as a variable
 df = pd.read_excel('test_data_set_sdv602_milestone_2.xlsx', sheet_name='Sheet1')
 
 sg.theme('DarkBlack')
 
-def Excel_Graph(Card_Name, Percentage_of_Decks): 
-        """
-        Plots graph from excel file. (Placeholder for Milesotne 3)
+# def Excel_Graph(Card_Name, Percentage_of_Decks, df): 
+#         """
+#         Plots graph from excel file. (Placeholder for Milestone 3)
         
-        """
-        plt.figure(figsize=(10.5, 6))
-        plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
-        plt.xlabel("Card Name", weight='bold')
-        plt.ylabel("Percentage of Decks", weight='bold')
-        plt.title("Excel Graph Bar Chart", weight='bold')
-        plt.plot()
+#         """
+#         plt.figure(=(10.5, 6))
+#         plt.bar(df['Card_Name'], df['Percentage_of_Decks'])
+#         plt.xlabel("Card Name", weight='bold')
+#         plt.ylabel("Percentage of Decks", weight='bold')
+#         plt.title("Excel Graph Bar Chart", weight='bold')
+#         plt.plot()
         
-        return plt.gcf()
+#         return plt.gcf()
 
 def draw_figure(canvas, figure):
         """
-        Function that uses a figgure agg to draw the graph (figure) to the canvas.
+        Function that uses a figure agg to draw the graph (figure) to the canvas.
         
         """
         figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
@@ -77,7 +80,7 @@ def CCL_Azorius():
     window = sg.Window("Top 10 Azorius Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -115,7 +118,7 @@ def CCL_Boros():
     window = sg.Window("Top 10 Boros Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -153,7 +156,7 @@ def CCL_Dimir():
     window = sg.Window("Top 10 Dimir Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -191,7 +194,7 @@ def CCL_Golgari():
     window = sg.Window("Top 10 Golgari Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -228,7 +231,7 @@ def CCL_Gruul():
     window = sg.Window("Top 10 Gruul Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -266,7 +269,7 @@ def CCL_Izzet():
     window = sg.Window("Top 10 Izzet Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -304,7 +307,7 @@ def CCL_Orzhov():
     window = sg.Window("Top 10 Orzhov Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -342,7 +345,7 @@ def CCL_Rakdos():
     window = sg.Window("Top 10 Rakdos Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -380,7 +383,7 @@ def CCL_Selesnya():
     window = sg.Window("Top 10 Selesnya Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -418,7 +421,7 @@ def CCL_Simic():
     window = sg.Window("Top 10 Simic Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -457,7 +460,7 @@ def CL_Multicolour():
     window = sg.Window("Top 10 Multicolour Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -495,7 +498,7 @@ def CL_White():
     window = sg.Window("Top 10 White Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -533,7 +536,7 @@ def CL_Red():
     window = sg.Window("Top 10 Red Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -571,7 +574,7 @@ def CL_Blue():
     window = sg.Window("Top 10 Blue Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -583,43 +586,47 @@ def CL_Blue():
         
     window.close()
 
-def CL_Green():
-    """
-    Function that creates Green Cards window when clicked in Colour tab.  
+# def CL_Green():
+#     """
+#     Function that creates Green Cards window when clicked in Colour tab.  
     
-    """
-    layout = [[sg.Text("Top 10 Green Cards", justification='center', size=(135,1))],
-                # Summery Information Placeholder
-                [sg.Text("Summery Information:"),
-                sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
-                # Canvas for graph
-                [sg.Canvas(size=(700, 600), key='-CANVAS-')],
-                # Chat Box
-                [sg.Text('Output', size=(40, 1))],
-                [sg.Output(size=(125, 3), font=('Helvetica 10')),
-                # Zoom Buttons
-                sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
-                # Chat Box
-                [sg.Text('Input', size=(40, 1))],
-                [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
-                sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
-                # Settings Button
-                sg.Button('Settings', size=(8, 1))]]
+#     """
+#     layout = [[sg.Text("Top 10 Green Cards", justification='center', size=(135,1))],
+#                 # Summery Information Placeholder
+#                 [sg.Text("Summery Information:"),
+#                 sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
+#                 # Canvas for graph
+#                 [sg.Canvas(size=(700, 600), key='-CANVAS-')],
+#                 # Chat Box
+#                 [sg.Text('Output', size=(40, 1))],
+#                 [sg.Output(size=(125, 3), font=('Helvetica 10')),
+#                 # Zoom Buttons
+#                 sg.Button('Zoom In', size=(8, 1)), sg.Button('Zoom Out', size=(8, 1))],
+#                 # Chat Box
+#                 [sg.Text('Input', size=(40, 1))],
+#                 [sg.Multiline(size=(125, 2), enter_submits=False, key='-QUERY-', do_not_clear=False),
+#                 sg.Button('SEND', bind_return_key=True, size=(8, 1)), 
+#                 # Settings Button
+#                 sg.Button('Settings', size=(8, 1))]]
+    
+#     green_card_view = DesView("Top 10 Green Cards", layout, df, draw_figure)
+#     # print("green_card_view")
+#     green_card_view.accept()
 
-    window = sg.Window("Top 10 Green Cards", layout, modal=True, finalize=True)
+    # window = sg.Window("Top 10 Green Cards", layout, modal=True, finalize=True)
     
-    # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    # # Draws the graph to the canvas.
+    # draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
-    while True:
-        event, values = window.read()
-        if event == "Exit" or event == sg.WIN_CLOSED:
-            break
-        if event == 'SEND':
-            query = values['-QUERY-'].rstrip()
-            print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
+    # while True:
+    #     event, values = window.read()
+    #     if event == "Exit" or event == sg.WIN_CLOSED:
+    #         break
+    #     if event == 'SEND':
+    #         query = values['-QUERY-'].rstrip()
+    #         print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
         
-    window.close()
+    # window.close()
 
 def CL_Black():
     """
@@ -647,7 +654,7 @@ def CL_Black():
     window = sg.Window("Top 10 Black Cards", layout, modal=True, finalize=True)
     
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
     
     while True:
         event, values = window.read()
@@ -722,7 +729,7 @@ def main():
     window = sg.Window("Application", tab_group, use_default_focus=False, finalize=True)
 
     # Draws the graph to the canvas.
-    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks']))
+    draw_figure(window['-CANVAS-'].TKCanvas, Excel_Graph(df['Card_Name'], df['Percentage_of_Decks'], df))
 
     # Event Loop to process "events" and get the "values" of the inputs.
     while True:
@@ -758,7 +765,7 @@ def main():
         elif event == "open_Blue":
             CL_Blue()
         elif event == "open_Green":
-            CL_Green()
+            CL_Green(df, draw_figure)
         elif event == "open_Black":
             CL_Black()
         if event == 'SEND':
