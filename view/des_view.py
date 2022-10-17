@@ -1,6 +1,6 @@
 """
-This file ???
-
+This file creates a new window for each button in the DES Two (CCL_) and DES Three (CL_) tabs when clicked.
+Also holds the event loop for each of these new windows.
 """
 
 import PySimpleGUI as sg
@@ -13,6 +13,10 @@ from view.figures import Excel_Graph
 
 
 class DesView(object):
+    """
+    Creates a new window for each button in the DES Two (CCL_) and DES Three (CL_) tabs.
+    Holds the event loop for each new window.
+    """
     def __init__(self, Name, layout, df, draw_figure):
         self.layout = layout
         self.window = sg.Window(Name, layout, modal=True, finalize=True)
@@ -23,9 +27,8 @@ class DesView(object):
             event, values = self.window.read()
             if event == "Exit" or event == sg.WIN_CLOSED:
                 break
-            if event == 'SEND':
+            if event == 'SEND':                                 # If send button clicked, print input to output.
                 query = values['-QUERY-'].rstrip()
-                print('User 1: {}'.format(query), flush=True) # If send button clicked, print input to output.
+                print('User 1: {}'.format(query), flush=True) 
             
         self.window.close()
-        
