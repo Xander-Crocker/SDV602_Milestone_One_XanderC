@@ -11,6 +11,7 @@ Issues(*) / ToDo(-):
     - Zoom in and zoom out buttons need to function correctly.
     - Chat needs to function correctly.
     
+    * top_10_layout input clashing with bottom of window.
 """
 
 # Imported Modules
@@ -24,6 +25,7 @@ import matplotlib.pyplot as plt
 # Imported Files
 from view.figures import Excel_Graph
 from view.des_view import DesView
+from view.user_login_view import LoginView
 
 # Imported Functions for DES Two (CCL_)
 from controller.DES2_CCL_button_layouts import CCL_Azorius
@@ -94,7 +96,7 @@ def main():
                     [sg.Text("Summery Information:")],
                     [sg.Text("Information about the DES will be placed here, this is a placeholder.", size=(85,1))],
                     # Canvas for graph
-                    [sg.Canvas(size=(600, 600), key='-CANVAS-')],
+                    [sg.Canvas(size=(600, 620), key='-CANVAS-')],
                     # Chat Box
                     [sg.Text('Output', size=(40, 1))],
                     [sg.Output(size=(125, 3), font=('Helvetica 10')),
@@ -184,5 +186,11 @@ def main():
     window.close()
 
 if __name__ == "__main__":
-    main()
+    
+    login_view = LoginView()
+    login_view.set_up_layout()
+    login_view.render()
+    login_view.accept_input()
+
+    #main()
     pass
