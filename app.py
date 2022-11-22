@@ -187,10 +187,10 @@ def main():
 
 if __name__ == "__main__":
     
-    login_view = LoginView()
-    login_view.set_up_layout()
-    login_view.render()
-    login_view.accept_input()
+    # login_view = LoginView()
+    # login_view.set_up_layout()
+    # login_view.render()
+    # login_view.accept_input()
 
-    #main()
+    main()
     pass
