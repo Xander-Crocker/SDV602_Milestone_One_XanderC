@@ -4,14 +4,11 @@ Issues(*) / ToDo(-):
     - Home page needs to be populated.
     - DES windows needs to be populated.
     - DES two and three needs images for buttons and buttons need repositioning.
-    
-    - Login and Sign up need to be created.
-    - Sign out button on home page. (Take user back to login)
+   
     - Settings page needs to be created.
     - Zoom in and zoom out buttons need to function correctly.
     - Chat needs to function correctly.
-    
-    * top_10_layout input clashing with bottom of window.
+
 """
 
 # Imported Modules
@@ -52,9 +49,10 @@ df = pd.read_excel('test_data_set_sdv602_milestone_2.xlsx', sheet_name='Sheet1')
 
 sg.theme('DarkBlack')
 
+
 def draw_figure(canvas, figure):
         """
-        Function that uses figure aggregator to draw the graph (figure) to the canvas.
+        Function that uses a figure agg to draw the graph (figure) to the canvas.
         
         """
         figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
